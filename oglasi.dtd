@@ -1,0 +1,16 @@
+<!ELEMENT SkupOglasa (Oglas)+ >
+<!ELEMENT Oglas (Kategorija,Naslov,DatumIsteka,Cena,TekstOglasa,Tagovi,Kontakt)>
+<!ELEMENT Kategorija (#PCDATA)>
+<!ELEMENT Naslov (#PCDATA)>
+<!ELEMENT DatumIsteka (Dan,Mesec,Godina)>
+<!ELEMENT Dan (#PCDATA)>
+<!ELEMENT Mesec (#PCDATA)>
+<!ELEMENT Godina (#PCDATA)>
+<!ELEMENT Cena (#PCDATA)>
+<!ELEMENT TekstOglasa (#PCDATA)>
+<!ELEMENT Tagovi (Tag)*>
+<!ELEMENT Tag (#PCDATA)>
+<!ELEMENT Kontakt (Email)*>
+<!ELEMENT Email (#PCDATA)>
+<!ATTLIST Cena valuta "din" >
+<!ATTLIST Email piv ("privatni"|"sluzbeni") "privatni" >
