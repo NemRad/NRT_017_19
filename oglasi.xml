@@ -1,0 +1,71 @@
+<SkupOglasa>
+    <Oglas>
+        <Kategorija>Nekretnine</Kategorija>
+        <Naslov>Plac na Torniku</Naslov>
+        <DatumIsteka>
+            <Dan>11</Dan>
+            <Mesec>6</Mesec>
+            <Godina>2022</Godina>
+        </DatumIsteka>
+        <Cena valuta="eur">200000</Cena>
+        <TekstOglasa>
+            PLAC NA TORNIKU 900m udaljen od vrha skijaške staze. Plac se sastoji od tri zasebna placa po 5ar, jedan pored drugog ukupno 15ar. Pored asfalta, u blizici vikendica .
+            Udaljen 11km od Kraljevog trga na Zlatiboru, 900m od vrha staze na Torniku, 3,4km od Riničkog jezera. 
+        </TekstOglasa>
+        <Tagovi>
+            <Tag>Tornik</Tag>
+            <Tag>Plac</Tag>
+            <Tag>Zamena</Tag>
+        </Tagovi>
+        <Kontakt>
+            <Email piv="privatni">katarina.popadic@gmail.com</Email>
+        </Kontakt>
+    </Oglas>
+    <Oglas>
+        <Kategorija>Automobil</Kategorija>
+        <Naslov>Renaul Clio 15DCI</Naslov>
+        <DatumIsteka>
+            <Dan>11</Dan>
+            <Mesec>6</Mesec>
+            <Godina>2022</Godina>
+        </DatumIsteka>
+        <Cena valuta="eur">1500</Cena>
+        <TekstOglasa>
+            Renault Clio 15DCI, 2003. godiste. Hečbek. Dizel Kubikaža: 1.461 cm3
+            Snaga motora: 48 kW/65 KS. Prešao je oko 250.000 km. Registrovan do 11.03.2023.    
+        </TekstOglasa>
+        <Tagovi>
+            <Tag>Reno</Tag>
+            <Tag>Renault</Tag>
+            <Tag>Renault Clio</Tag>
+        </Tagovi>
+        <Kontakt>
+            <Email piv="privatni">milica.obradovic@gmail.com</Email>
+        </Kontakt>
+    </Oglas>
+    <Oglas>
+        <Kategorija>Tehnologija</Kategorija>
+        <Naslov>Bezicni Dzojstik za Ps4 Nov</Naslov>
+        <DatumIsteka>
+            <Dan>11</Dan>
+            <Mesec>6</Mesec>
+            <Godina>2022</Godina>
+        </DatumIsteka>
+        <Cena valuta="rsd">2300</Cena>
+        <TekstOglasa>
+            Dzojstik za Sony PS4 Dualshock bezicni kontroler sa motivom Cyberpunk 2077
+            Garancija na ispravnost
+            Nov - Fabricko pakovanje
+            Kupovinom 3 komada Besplatna postarina   
+        </TekstOglasa>
+        <Tagovi>
+            <Tag>PlayStation 4</Tag>
+            <Tag>PS4</Tag>
+            <Tag>JoyStick</Tag>
+            <Tag>Dzojstik</Tag>
+        </Tagovi>
+        <Kontakt>
+            <Email piv="sluzbeni">info@kupovinaizfotelje.com</Email>
+        </Kontakt>
+    </Oglas>
+</SkupOglasa>
