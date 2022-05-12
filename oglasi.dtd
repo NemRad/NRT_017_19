@@ -18,5 +18,5 @@
 <!ELEMENT Tag (#PCDATA)>
 <!ELEMENT Kontakt (Email)*>
 <!ELEMENT Email (#PCDATA)>
-<!ATTLIST Cena valuta "din" >
-<!ATTLIST Email piv ("privatni"|"sluzbeni") "privatni" >
+<!ATTLIST Cena valuta CDATA "din" >
+<!ATTLIST Email piv (privatni|sluzbeni) "privatni" >
