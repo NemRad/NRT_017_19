@@ -1,0 +1,94 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="SkupOglasa">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Oglas" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="Id"/>
+              <xs:element name="Kategorija">
+                <xs:complexType>
+                  <xs:choice>
+                    <xs:element type="xs:string" name="Nekretnine"/>
+                    <xs:element type="xs:string" name="Automobil"/>
+                    <xs:element type="xs:string" name="Tehnologija"/>
+                  </xs:choice>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="Naslov"/>
+              <xs:element name="DatumIsteka">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Dan">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="1"/>
+                                <xs:maxInclusive value="31"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Mesec">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="1"/>
+                                <xs:maxInclusive value="12"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="Godina">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="2022"/>
+                                <xs:maxInclusive value="2023"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Cena">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:nonNegativeInteger">
+                      <xs:attribute type="xs:string" name="valuta" default="rsd"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="TekstOglasa">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:minLength value="10"/>
+                        <xs:maxLength value="180"/>
+                    </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tagovi">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="Tag" maxOccurs="unbounded" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="Kontakt">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Email">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:string" name="piv" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
