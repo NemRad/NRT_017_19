@@ -1,6 +1,12 @@
 <!ELEMENT SkupOglasa (Oglas)+ >
-<!ELEMENT Oglas (Kategorija,Naslov,DatumIsteka,Cena,TekstOglasa,Tagovi,Kontakt)>
-<!ELEMENT Kategorija (#PCDATA)>
+<!ELEMENT Oglas (Id,Kategorija,Naslov,DatumIsteka,Cena,TekstOglasa,Tagovi,Kontakt)>
+<!ELEMENT Id (#PCDATA)>
+<!ELEMENT Kategorija (Nekretnine|Automobil|Tehnologija|Alati|Poducavanje)>
+<!ELEMENT Nekretnine EMPTY>
+<!ELEMENT Automobil EMPTY>
+<!ELEMENT Tehnologija EMPTY>
+<!ELEMENT Alati EMPTY>
+<!ELEMENT Poducavanje EMPTY >
 <!ELEMENT Naslov (#PCDATA)>
 <!ELEMENT DatumIsteka (Dan,Mesec,Godina)>
 <!ELEMENT Dan (#PCDATA)>
