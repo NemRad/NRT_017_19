@@ -33,6 +33,7 @@ exports.dodajOglas = (novOglas) => {
     }
     novOglas.id=id;
     oglasi.push(novOglas)
+    console.log(novOglas)
     snimiOglase(oglasi);
 }
 
@@ -52,7 +53,7 @@ exports.promeniOglas = (id,noviPodaci) => {
             oglas.cena==noviPodaci.cena;
             oglas.tekst==noviPodaci.tekst;
             oglas.tagovi==noviPodaci.tagovi;
-            oglas.kontakt==noviPodaci.kontakt;
+            oglas.kontakt==noviPodaci.mejl;
         }
     });
 

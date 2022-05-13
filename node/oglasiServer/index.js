@@ -17,16 +17,17 @@ app.get('/prikazi_oglase',(request, response)=>{
     response.send(oglasiServis.prikaziOglase())
 });
 
-app.get('/prikazi_oglase_po_kategoriji',(request, response)=>{
-    response.send(oglasiServis.prikaziOglasePoKategoriji(request.query["kategorija"]));
+app.get('/prikazi_oglase_po_kategoriji/:kategorija',(request, response)=>{
+    response.send(oglasiServis.prikaziOglasePoKategoriji(request.params["kategorija"]));
 });
 
-app.get('/get_oglas',(request, response)=>{
-    response.send(oglasiServis.getOglas(request.query["id"]));
+app.get('/get_oglas/:id',(request, response)=>{
+    response.send(oglasiServis.getOglas(request.params["id"]));
 });
 
 app.post('/dodaj_oglas',(request, response)=>{
     oglasiServis.dodajOglas(request.body);
+    console.log(request.body)
     response.end("OK");
 })
 app.post('/promeni_oglas/:id',(request, response)=>{

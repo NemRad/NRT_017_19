@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oglasi Klijent - Oglasi</title>
+</head>
+<body>
+    <nav>
+        <a href="/prikazi_oglase">Pogledaj sve oglase</a>
+        <a href="/dodaj_oglas">Dodaj oglas</a>
+    </nav>
+    <h1>Oglasi klijentska aplikacija - Prikaz oglasa</h1>
+    <div>
+        <form action="/filtriraj_oglase_po_kategoriji" method="POST">
+            <label for="">Kategorija:</label> <input type="text" name="kategorija"> <button type="submit">Filtriraj</button>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Kategorija</td>
+                <td>Naslov</td>
+            </tr>
+        </thead>
+        <tbody>
+            #{data}
+        </tbody>
+    </table>
+    
+</body>
+</html>

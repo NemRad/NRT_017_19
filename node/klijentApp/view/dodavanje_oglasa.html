@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oglasi Klijent - Dodavanje</title>
+</head>
+<body>
+    <nav>
+        <a href="/prikazi_oglase">Pogledaj sve oglase</a>
+        <a href="/dodaj_oglas">Dodaj oglas</a>
+    </nav>
+    <h1>Oglasi klijentska aplikacija - Dodavanje oglasa</h1>
+    <div>
+        <form action="/snimi_oglas" method="post">
+            <label for="">Kategorija oglasa</label><input type="text" name="kategorija">
+            <br>
+            <label for="">Naslov oglasa</label><input type="text" name="naziv">
+            <br>
+            <label for="">Datum isteka</label><input type="date" name="datum">
+            <br>
+            <label for="">Cena</label><input type="text" name="cena">
+            <br>
+            <label for="">Tekst oglasa</label><input type="text" name="tekst">
+            <br>
+            <label for="">Tagovi (odvojiti sa ';')</label><input type="text" name="tagovi">
+            <br>
+            <label for="">Kontakt</label><input type="email" name="mejl">
+            <br>
+            <button type="submit">Dodaj oglas</button>
+        </form>
+    </div>
+    
+</body>
+</html>
