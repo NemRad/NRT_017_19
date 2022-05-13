@@ -41,11 +41,12 @@ exports.obrisiOglas = (id) => {
     snimiOglase(this.prikaziOglase().filter(x => x.id != id));
 }
 
-exports.promeniOglas = (id,noviPodaci) => {
-    let oglasi = prikaziOglase()
+exports.promeniOglas = (noviPodaci) => {
+    console.log("A")
+    //let oglasi = this.prikaziOglase();
     
     oglasi.forEach(oglas => {
-        if(oglas.id==id)
+        if(oglas.id==noviPodaci.id)
         {
             oglas.kategorija==noviPodaci.kategorija;
             oglas.naslov==noviPodaci.naslov;

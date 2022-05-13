@@ -30,8 +30,9 @@ app.post('/dodaj_oglas',(request, response)=>{
     console.log(request.body)
     response.end("OK");
 })
-app.post('/promeni_oglas/:id',(request, response)=>{
-    oglasiServis.promeniOglas(request.params["id"],request.body);
+app.post('/promeni_oglas/',(request, response)=>{
+    oglasiServis.promeniOglas(request.body);
+    console.log("a")
     response.end("OK");
 })
 

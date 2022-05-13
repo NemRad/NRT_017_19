@@ -27,6 +27,7 @@ app.get("/prikazi_oglase",(req,res)=>{
             <td>${element.kategorija}</td>
             <td>${element.naziv}</td>
             <td><a href="/detaljnije/${element.id}">Detaljnije</a></td>
+            <td><a href="/azuriranje/${element.id}">Azuriranje</a></td>
             <td><a href="/obrisi/${element.id}">Obrisi</a></td>
         </tr>`;
         });
@@ -49,9 +50,35 @@ app.get("/detaljnije/:id",(req,res)=>{
             <td>${response.data.tekst}</td>
             <td>${response.data.tagovi}</td>
             <td>${response.data.kontakt}</td>
+            <td><a href="/azuriranje/${response.data.id}">Azuriranje</a></td>
             <td><a href="/obrisi/${response.data.id}">Obrisi</a></td>
         </tr>`;
         res.send(procitajPogledZaNaziv("prikaz_oglasa").replace("#{data}",prikaz));
+    })
+    .catch(error => {
+        console.log(error);
+    });
+});
+app.get("/azuriranje/:id",(req,res)=>{
+    axios.get(`http://localhost:3000/get_oglas/${req.params["id"]}`)
+    .then(response=>{
+        let prikaz="";
+            prikaz+=`<input type="text" name="id" value="${response.data.id}" hidden>
+            <label for="">Kategorija oglasa</label><input type="text" name="kategorija" value="${response.data.kategorija}">
+            <br>
+            <label for="">Naslov oglasa</label><input type="text" name="naziv" value="${response.data.naziv}">
+            <br>
+            <label for="">Datum isteka</label><input type="date" name="datum" value="${response.data.datum}">
+            <br>
+            <label for="">Cena</label><input type="text" name="cena" value="${response.data.cena}">
+            <br>
+            <label for="">Tekst oglasa</label><input type="text" name="tekst" value="${response.data.tekst}">
+            <br>
+            <label for="">Tagovi (odvojiti sa ';')</label><input type="text" name="tagovi" value="${response.data.tagovi}">
+            <br>
+            <label for="">Kontakt</label><input type="email" name="mejl" value="${response.data.kontakt}">
+        </tr>`;
+        res.send(procitajPogledZaNaziv("azuriranje_oglasa").replace("#{data}",prikaz));
     })
     .catch(error => {
         console.log(error);
@@ -66,6 +93,19 @@ app.get("/dodaj_oglas",(req,res)=>{
 });
 app.post("/snimi_oglas",(req,res)=>{
     axios.post("http://localhost:3000/dodaj_oglas",{
+        kategorija:req.body.kategorija,
+        naziv:req.body.naziv,
+        datum:req.body.datum,
+        cena:req.body.cena,
+        tekst:req.body.tekst,
+        tagovi:req.body.tagovi,
+        kontakt:req.body.mejl
+    })
+    res.redirect("/prikazi_oglase");
+});
+app.post("/azuriraj_oglas",(req,res)=>{
+    axios.post(`http://localhost:3000/promeni_oglas/`,{
+        id:req.body.id,
         kategorija:req.body.kategorija,
         naziv:req.body.naziv,
         datum:req.body.datum,
