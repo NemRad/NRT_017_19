@@ -5,30 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oglasi Klijent - Oglasi</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a href="/prikazi_oglase">Pogledaj sve oglase</a>
-        <a href="/dodaj_oglas">Dodaj oglas</a>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">OGLASI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/prikazi_oglase">Pogledaj sve oglase</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/dodaj_oglas">Dodaj oglas</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     <h1>Oglasi klijentska aplikacija - Prikaz oglasa</h1>
     <div>
-        <form action="/filtriraj_oglase_po_kategoriji" method="POST">
-            <label for="">Kategorija:</label> <input type="text" name="kategorija"> <button type="submit">Filtriraj</button>
-        </form>
+        <form class="form-inline" action="/filtriraj_oglase_po_kategoriji" method="POST">
+            <div class="row">
+                <div class="col-12 col-md-1"><label for="">Kategorija:</label>  </div>
+                <div class="col-12 col-md-3"><input type="text" name="kategorija"  class="form-control" placeholder="Unesite ime kategorije...">  </div>
+                <div class="col-12 col-md-1"><button type="submit"  class="btn btn-primary">Filtriraj</button> </div>
+                
+            </div>
+            </form>
     </div>
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <td>ID</td>
-                <td>Kategorija</td>
-                <td>Naslov</td>
+                <th scope="col">ID</th>
+                <th scope="col">Kategorija</th>
+                <th scope="col">Naslov</th>
             </tr>
         </thead>
         <tbody>
             #{data}
         </tbody>
     </table>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

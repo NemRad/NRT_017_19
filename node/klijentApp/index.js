@@ -23,7 +23,7 @@ app.get("/prikazi_oglase",(req,res)=>{
         let prikaz="";
         response.data.forEach(element => {
             prikaz+=`<tr>
-            <td>${element.id}</td>
+            <th scope="row">${element.id}</th>
             <td>${element.kategorija}</td>
             <td>${element.naziv}</td>
             <td><a href="/detaljnije/${element.id}">Detaljnije</a></td>
@@ -42,7 +42,7 @@ app.get("/detaljnije/:id",(req,res)=>{
     .then(response=>{
         let prikaz="";
             prikaz+=`<tr>
-            <td>${response.data.id}</td>
+            <th scope="row">${response.data.id}</th>
             <td>${response.data.kategorija}</td>
             <td>${response.data.naziv}</td>
             <td>${response.data.datum}</td>
@@ -64,20 +64,20 @@ app.get("/azuriranje/:id",(req,res)=>{
     .then(response=>{
         let prikaz="";
             prikaz+=`<input type="text" name="id" value="${response.data.id}" hidden>
-            <label for="">Kategorija oglasa</label><input type="text" name="kategorija" value="${response.data.kategorija}">
+            <label for="">Kategorija oglasa</label><input type="text"  class="form-control" name="kategorija" value="${response.data.kategorija}">
             <br>
-            <label for="">Naslov oglasa</label><input type="text" name="naziv" value="${response.data.naziv}">
+            <label for="">Naslov oglasa</label><input type="text" class="form-control" name="naziv" value="${response.data.naziv}">
             <br>
-            <label for="">Datum isteka</label><input type="date" name="datum" value="${response.data.datum}">
+            <label for="">Datum isteka</label><input type="date" class="form-control" name="datum" value="${response.data.datum}">
             <br>
-            <label for="">Cena</label><input type="text" name="cena" value="${response.data.cena}">
+            <label for="">Cena</label><input type="text" class="form-control" name="cena" value="${response.data.cena}">
             <br>
-            <label for="">Tekst oglasa</label><input type="text" name="tekst" value="${response.data.tekst}">
+            <label for="">Tekst oglasa</label><input type="text" class="form-control" name="tekst" value="${response.data.tekst}">
             <br>
-            <label for="">Tagovi (odvojiti sa ';')</label><input type="text" name="tagovi" value="${response.data.tagovi}">
+            <label for="">Tagovi (odvojiti sa ';')</label><input type="text" class="form-control" name="tagovi" value="${response.data.tagovi}">
             <br>
-            <label for="">Kontakt</label><input type="email" name="mejl" value="${response.data.kontakt}">
-        </tr>`;
+            <label for="">Kontakt</label><input type="email" class="form-control" name="mejl" value="${response.data.kontakt}">
+        `;
         res.send(procitajPogledZaNaziv("azuriranje_oglasa").replace("#{data}",prikaz));
     })
     .catch(error => {
@@ -123,7 +123,7 @@ app.post("/filtriraj_oglase_po_kategoriji",(req,res)=>{
         let prikaz="";
         response.data.forEach(element => {
             prikaz+=`<tr>
-            <td>${element.id}</td>
+            <th scope="row">${element.id}</th
             <td>${element.kategorija}</td>
             <td>${element.naziv}</td>
             <td><a href="/detaljnije/${element.id}">Detaljnije</a></td>
