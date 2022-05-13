@@ -43,7 +43,7 @@ exports.obrisiOglas = (id) => {
 
 exports.promeniOglas = (noviPodaci) => {
     console.log("A")
-    //let oglasi = this.prikaziOglase();
+    let oglasi = this.prikaziOglase();
     
     oglasi.forEach(oglas => {
         if(oglas.id==noviPodaci.id)
